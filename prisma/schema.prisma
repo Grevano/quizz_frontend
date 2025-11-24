@@ -1,0 +1,18 @@
+// prisma/schema.prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Gear {
+  id          Int      @id @default(autoincrement())
+  name        String
+  category    String   // Guitar, Pedal, Amp
+  brand       String
+  description String?
+  createdAt   DateTime @default(now())
+}

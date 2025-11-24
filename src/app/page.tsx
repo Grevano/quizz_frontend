@@ -1,66 +1,38 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="d-flex flex-column align-items-center justify-content-center text-center animate-fade-in py-5">
+      <div className="p-5 mb-4 rounded-3 shadow-lg" 
+           style={{ background: 'linear-gradient(135deg, #1e1e1e 0%, #0f0f0f 100%)', border: '1px solid #333' }}>
+        <h1 className="display-3 fw-bold mb-3">
+          Welcome to <span style={{ color: '#6200ea' }}>GearVault</span>
+        </h1>
+        <p className="lead text-secondary mb-4">
+          The ultimate sanctuary for your musical instruments. <br/>
+          Track, manage, and explore your gear collection.
+        </p>
+        
+        <div className="d-flex gap-3 justify-content-center">
+          <Link href="/gear" className="btn btn-primary btn-lg px-5 rounded-pill shadow-sm" style={{ backgroundColor: '#6200ea', border: 'none' }}>
+            Manage Gear
+          </Link>
+          <Link href="/explore" className="btn btn-outline-light btn-lg px-5 rounded-pill">
+            Explore Music
+          </Link>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </div>
+
+      <div className="row mt-5 animate-slide-up stagger-2 w-100">
+        <div className="col-md-4 mx-auto">
+          <div className="custom-card p-4 h-100 text-start border-start border-4 border-info">
+            <h5 className="text-white">Student Profile</h5>
+            <p className="text-secondary mb-1">Name: <span className="text-white">Grevano Geraldo</span></p>
+            <p className="text-secondary mb-1">NIM: <span className="text-white">535240030</span></p>
+            <p className="text-secondary">Topic: <span className="text-accent">Guitar Inventory System</span></p>
+          </div>
         </div>
-      </main>
+      </div>
     </div>
   );
 }
